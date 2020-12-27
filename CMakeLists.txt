@@ -3,7 +3,7 @@ project(cPace LANGUAGES C DESCRIPTION
     "An C implementation of cPace that uses OpenSSL as the crypto library"
 )
 
-find_package(OpenSSL REQUIRED)
+find_package(OpenSSL 1.1.0 REQUIRED COMPONENTS Crypto)
 
 add_library(cpace STATIC cpace.c cpace.h)
 target_link_libraries(cpace PRIVATE OpenSSL::Crypto)
